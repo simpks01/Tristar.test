@@ -1,0 +1,11 @@
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\bin\Debug\netstandard2.0\TRISTAR.Assessment.Client.deps.json
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\bin\Debug\netstandard2.0\TRISTAR.Assessment.Client.dll
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\bin\Debug\netstandard2.0\TRISTAR.Assessment.Client.pdb
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\bin\Debug\netstandard2.0\TRISTAR.Assessment.Core.dll
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\bin\Debug\netstandard2.0\TRISTAR.Assessment.Core.pdb
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\obj\Debug\netstandard2.0\TRISTAR.Assessment.Client.csprojAssemblyReference.cache
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\obj\Debug\netstandard2.0\TRISTAR.Assessment.Client.AssemblyInfoInputs.cache
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\obj\Debug\netstandard2.0\TRISTAR.Assessment.Client.AssemblyInfo.cs
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\obj\Debug\netstandard2.0\TRISTAR.Assessment.Client.csproj.CopyComplete
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\obj\Debug\netstandard2.0\TRISTAR.Assessment.Client.dll
+c:\Users\mrbig\Desktop\tristar\Tristar.test\tristar.test\TRISTAR.Assessment.Client\obj\Debug\netstandard2.0\TRISTAR.Assessment.Client.pdb

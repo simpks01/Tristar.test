@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text.Json;
+using Microsoft.AspNetCore.WebUtilities;
+using System.Linq;
+using System.Text;
+
 
 namespace TRISTAR.Assessment.People
 {
@@ -13,6 +18,9 @@ namespace TRISTAR.Assessment.People
     {
         private readonly HttpClient _httpClient;
 
+        // create global variable for localhost
+        private const string PeopleUrlBase = "http://localhost:3000/api/people";
+
         public PersonClientRepository(HttpClient httpClient)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
@@ -23,10 +31,12 @@ namespace TRISTAR.Assessment.People
         /// </summary>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public Task<Person> CreatePerson(EditPersonParameters parameters)
+        public async Task<Person> CreatePerson(EditPersonParameters parameters)
         {
-            // Implementation goes here!
-            throw new NotImplementedException();
+            
+             var message = await _httpClient
+                .PostAsync(PeopleUrlBase, new StringContent(JsonSerializer.Serialize(parameters), Encoding.UTF8, "application/json"));
+            return await JsonSerializer.DeserializeAsync<Person>(await message.Content.ReadAsStreamAsync());
         }
 
         /// <summary>
@@ -57,10 +67,11 @@ namespace TRISTAR.Assessment.People
         /// </summary>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public Task<IEnumerable<Person>> GetPeople(QueryPersonParameters parameters)
+        public async Task<IEnumerable<Person>> GetPeople(QueryPersonParameters parameters)
         {
-            // Implementation goes here!
-            throw new NotImplementedException();
+            var stream = _httpClient.GetStreamAsync(ParseQueryPersonParameters(parameters));
+            return await JsonSerializer.DeserializeAsync<List<Person>>(await stream);
+
         }
 
         /// <summary>
@@ -68,10 +79,34 @@ namespace TRISTAR.Assessment.People
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<Person> GetPerson(Guid id)
+        public async Task<Person> GetPerson(Guid id)
         {
-            // Implementation goes here!
-            throw new NotImplementedException();
+            var stream = await _httpClient.GetStreamAsync($"{PeopleUrlBase}/{id}");
+            return await JsonSerializer.DeserializeAsync<Person>(stream);
+        }
+
+        // created a method for GetPeople to make cleaner
+        private string ParseQueryPersonParameters(QueryPersonParameters parameters)
+        {
+            string url = PeopleUrlBase;
+            if (parameters != null)
+            {
+                parameters.FirstName?.ForEach(firstName =>
+                {
+                    url = QueryHelpers.AddQueryString(url, "firstName", firstName);
+                });
+
+                parameters.LastName?.ForEach(lastName =>
+                {
+                    url = QueryHelpers.AddQueryString(url, "lastName", lastName);
+                });
+
+                parameters.Id?.ForEach(id =>
+                {
+                    url = QueryHelpers.AddQueryString(url, "id", id.ToString());
+                });
+            }
+            return url;
         }
     }
 }

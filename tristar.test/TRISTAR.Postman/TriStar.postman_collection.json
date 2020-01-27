@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "b73f3c4d-b0ea-492e-a8cc-82e497f84dc4",
+		"name": "TriStar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "people",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/people",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "people/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/people/{id}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"people",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "people",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Test\",\n\t\"lastName\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/people",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "people",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/people/688233ae-45d2-4380-884e-21b0fc554dbc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"people",
+						"688233ae-45d2-4380-884e-21b0fc554dbc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
