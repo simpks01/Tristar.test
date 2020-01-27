@@ -1,4 +1,5 @@
 ﻿using TRISTAR.Assessment.Infrastructure;
+using System.Text.Json.Serialization;
 
 namespace TRISTAR.Assessment.People
 {
@@ -11,12 +12,14 @@ namespace TRISTAR.Assessment.People
         private string _firstName;
         private string _lastName;
 
+        [JsonPropertyName("firstName")]
         public string FirstName
         {
             get { return _firstName; }
             set { SetProperty(ref _firstName, value); }
         }
 
+        [JsonPropertyName("lastName")]
         public string LastName
         {
             get { return _lastName; }
