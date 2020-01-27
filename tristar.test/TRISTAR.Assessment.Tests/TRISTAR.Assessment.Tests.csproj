@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <RootNamespace>TRISTAR.Test</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.aspnetcore.mvc.testing" Version="3.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TRISTAR.Assessment.Core\TRISTAR.Assessment.Core.csproj" />
+    <ProjectReference Include="..\TRISTAR.Assessment.Client\TRISTAR.Assessment.Client.csproj" />
+    <ProjectReference Include="..\TRISTAR.Assessment.Server\TRISTAR.Assessment.Server.csproj" />
+  </ItemGroup>
+
+</Project>
